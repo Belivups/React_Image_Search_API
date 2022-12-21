@@ -1,4 +1,3 @@
-import image from '../assets/Image.png'
 import {useState} from "react";
 import SearchBox from "./SearchBox";
 
@@ -32,14 +31,14 @@ export default function ShowImages() {
 
         <div className={'showImageContainer'}>
            <div className="breadcrumbs">
-               <h3>{text == '' ? `Search For Images` : `${text.toLocaleUpperCase()} Images listed here` }</h3>
+               <h3>{text === '' ? `Search For Images` : `${text.toLocaleUpperCase()} Images listed here` }</h3>
            </div>
 
             {imageList.map(e => {
 
                 return(
                     <div className="images" key={e.id}>
-                        <img src={e.urls.regular}/>
+                        <img src={e.urls.regular} alt={e.id}/>
                         <h4 className={'title'}>{e.alt_description}</h4>
                     </div>
                 )
